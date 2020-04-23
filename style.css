@@ -17,6 +17,7 @@ button {
     border: none;
     margin: 2px;
     border-radius: 7px;
+    background-color: rgba(134, 128, 148, 0.9);
 }
 
 textarea {
@@ -26,7 +27,7 @@ textarea {
     resize: none;
     border: none;
 
-    font-family: 'Times New Roman', Times, serif;
+    font-family: inherit;
     font-size: 1.2em;
     font-weight: 600;
     color: #f0a820;
