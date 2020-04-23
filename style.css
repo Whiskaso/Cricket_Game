@@ -19,6 +19,24 @@ button {
     border-radius: 7px;
 }
 
+textarea {
+    text-align: center;
+    background: linear-gradient(20deg, #1F1F1F, rgb(102, 97, 112), #1F1F1F) no-repeat center fixed;
+    background-size: cover;
+    resize: none;
+    border: none;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #f0a820;
+    text-shadow: 1px 1px 2px;
+
+    width: 60px;
+    height: 40px;
+    margin-top: 30px;
+}
+
 h2,
 h3 {
     text-shadow: 1px 1px 2px;
