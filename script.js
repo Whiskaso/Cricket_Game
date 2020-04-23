@@ -77,6 +77,30 @@ const btn25sec = document.querySelector('.btn25sec');
 const btn25trd = document.querySelector('.btn25trd');
 const btn25four = document.querySelector('.btn25four');
 
+const radio2players = document.querySelector('#select2players');
+const radio3players = document.querySelector('#select3players');
+const radio4players = document.querySelector('#select4players');
+
+const displayPlayer3 = document.querySelector('.player3');
+const displayPlayer4 = document.querySelector('.player4');
+
+// CHANGEING NUMBER OF PLAYERS 
+
+radio2players.addEventListener('click', () => {
+  displayPlayer3.style.display = 'none';
+  displayPlayer4.style.display = 'none';
+})
+
+radio3players.addEventListener('click', () => {
+  displayPlayer3.style.display = 'flex';
+  displayPlayer4.style.display = 'none';
+})
+
+radio4players.addEventListener('click', () => {
+  displayPlayer3.style.display = 'flex';
+  displayPlayer4.style.display = 'flex';
+})
+
 // BUTTON 15 FOR 1 , 2 , 3 , 4 PLAYER
 
 btn15.addEventListener('click', () => {
