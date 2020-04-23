@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background: linear-gradient(20deg, #bad, blue) no-repeat center fixed;
+    background-size: cover;
+
+    font-size: 1.2em;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.player1,
+.player2 {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    margin: 2px;
+    border-radius: 5px;
+}
