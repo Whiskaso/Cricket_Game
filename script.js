@@ -299,5 +299,14 @@ function actualization() {
   setTimeout(() => {
     points1.textContent = player1[7][0];
     points2.textContent = player2[7][0];
+
+    if (player1[0][1] == true && player1[1][1] == true && player1[2][1] == true && player1[3][1] == true && player1[4][1] == true && player1[5][1] == true && player1[6][1] == true && player1[7][0] < player2[7][0]) {
+      alert('Player 1 win !');
+    }
+
+    if (player2[0][1] == true && player2[1][1] == true && player2[2][1] == true && player2[3][1] == true && player2[4][1] == true && player2[5][1] == true && player2[6][1] == true && player2[7][0] < player1[7][0]) {
+      alert('Player 2 win !');
+    }
+
   }, 300);
 }
