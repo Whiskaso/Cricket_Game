@@ -111,7 +111,7 @@ btn15.addEventListener('click', () => {
   } else if (player1[0][0] == 2) {
     btn15.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player1[0][0] >= 3) {
-    btn15.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn15.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player1[0][1] = true;
   }
 
@@ -136,7 +136,7 @@ btn15sec.addEventListener('click', () => {
   } else if (player2[0][0] == 2) {
     btn15sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player2[0][0] >= 3) {
-    btn15sec.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn15sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player2[0][1] = true;
   }
 
@@ -161,7 +161,7 @@ btn15trd.addEventListener('click', () => {
   } else if (player3[0][0] == 2) {
     btn15trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player3[0][0] >= 3) {
-    btn15trd.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn15trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player3[0][1] = true;
   }
 
@@ -186,7 +186,7 @@ btn15four.addEventListener('click', () => {
   } else if (player4[0][0] == 2) {
     btn15four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player4[0][0] >= 3) {
-    btn15four.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn15four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player4[0][1] = true;
   }
 
@@ -213,7 +213,7 @@ btn16.addEventListener('click', () => {
   } else if (player1[1][0] == 2) {
     btn16.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player1[1][0] >= 3) {
-    btn16.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn16.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player1[1][1] = true;
   }
 
@@ -238,7 +238,7 @@ btn16sec.addEventListener('click', () => {
   } else if (player2[1][0] == 2) {
     btn16sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player2[1][0] >= 3) {
-    btn16sec.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn16sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player2[1][1] = true;
   }
 
@@ -263,7 +263,7 @@ btn16trd.addEventListener('click', () => {
   } else if (player3[1][0] == 2) {
     btn16trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player3[1][0] >= 3) {
-    btn16trd.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn16trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player3[1][1] = true;
   }
 
@@ -288,7 +288,7 @@ btn16four.addEventListener('click', () => {
   } else if (player4[1][0] == 2) {
     btn16four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player4[1][0] >= 3) {
-    btn16four.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn16four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player4[1][1] = true;
   }
 
@@ -315,7 +315,7 @@ btn17.addEventListener('click', () => {
   } else if (player1[2][0] == 2) {
     btn17.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player1[2][0] >= 3) {
-    btn17.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn17.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player1[2][1] = true;
   }
 
@@ -340,7 +340,7 @@ btn17sec.addEventListener('click', () => {
   } else if (player2[2][0] == 2) {
     btn17sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player2[2][0] >= 3) {
-    btn17sec.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn17sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player2[2][1] = true;
   }
 
@@ -365,7 +365,7 @@ btn17trd.addEventListener('click', () => {
   } else if (player3[2][0] == 2) {
     btn17trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player3[2][0] >= 3) {
-    btn17trd.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn17trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player3[2][1] = true;
   }
 
@@ -390,7 +390,7 @@ btn17four.addEventListener('click', () => {
   } else if (player4[2][0] == 2) {
     btn17four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player4[2][0] >= 3) {
-    btn17four.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn17four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player4[2][1] = true;
   }
 
@@ -417,7 +417,7 @@ btn18.addEventListener('click', () => {
   } else if (player1[3][0] == 2) {
     btn18.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player1[3][0] >= 3) {
-    btn18.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn18.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player1[3][1] = true;
   }
 
@@ -442,7 +442,7 @@ btn18sec.addEventListener('click', () => {
   } else if (player2[3][0] == 2) {
     btn18sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player2[3][0] >= 3) {
-    btn18sec.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn18sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player2[3][1] = true;
   }
 
@@ -467,7 +467,7 @@ btn18trd.addEventListener('click', () => {
   } else if (player3[3][0] == 2) {
     btn18trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player3[3][0] >= 3) {
-    btn18trd.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn18trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player3[3][1] = true;
   }
 
@@ -492,7 +492,7 @@ btn18four.addEventListener('click', () => {
   } else if (player4[3][0] == 2) {
     btn18four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player4[3][0] >= 3) {
-    btn18four.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn18four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player4[3][1] = true;
   }
 
@@ -519,7 +519,7 @@ btn19.addEventListener('click', () => {
   } else if (player1[4][0] == 2) {
     btn19.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player1[4][0] >= 3) {
-    btn19.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn19.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player1[4][1] = true;
   }
 
@@ -544,7 +544,7 @@ btn19sec.addEventListener('click', () => {
   } else if (player2[4][0] == 2) {
     btn19sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player2[4][0] >= 3) {
-    btn19sec.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn19sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player2[4][1] = true;
   }
 
@@ -569,7 +569,7 @@ btn19trd.addEventListener('click', () => {
   } else if (player3[4][0] == 2) {
     btn19trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player3[4][0] >= 3) {
-    btn19trd.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn19trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player3[4][1] = true;
   }
 
@@ -594,7 +594,7 @@ btn19four.addEventListener('click', () => {
   } else if (player4[4][0] == 2) {
     btn19four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player4[4][0] >= 3) {
-    btn19four.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn19four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player4[4][1] = true;
   }
 
@@ -621,7 +621,7 @@ btn20.addEventListener('click', () => {
   } else if (player1[5][0] == 2) {
     btn20.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player1[5][0] >= 3) {
-    btn20.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn20.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player1[5][1] = true;
   }
 
@@ -646,7 +646,7 @@ btn20sec.addEventListener('click', () => {
   } else if (player2[5][0] == 2) {
     btn20sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player2[5][0] >= 3) {
-    btn20sec.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn20sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player2[5][1] = true;
   }
 
@@ -671,7 +671,7 @@ btn20trd.addEventListener('click', () => {
   } else if (player3[5][0] == 2) {
     btn20trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player3[5][0] >= 3) {
-    btn20trd.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn20trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player3[5][1] = true;
   }
 
@@ -696,7 +696,7 @@ btn20four.addEventListener('click', () => {
   } else if (player4[5][0] == 2) {
     btn20four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player4[5][0] >= 3) {
-    btn20four.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn20four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player4[5][1] = true;
   }
 
@@ -723,7 +723,7 @@ btn25.addEventListener('click', () => {
   } else if (player1[6][0] == 2) {
     btn25.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player1[6][0] >= 3) {
-    btn25.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn25.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player1[6][1] = true;
   }
 
@@ -748,7 +748,7 @@ btn25sec.addEventListener('click', () => {
   } else if (player2[6][0] == 2) {
     btn25sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player2[6][0] >= 3) {
-    btn25sec.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn25sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player2[6][1] = true;
   }
 
@@ -773,7 +773,7 @@ btn25trd.addEventListener('click', () => {
   } else if (player3[6][0] == 2) {
     btn25trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player3[6][0] >= 3) {
-    btn25trd.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn25trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player3[6][1] = true;
   }
 
@@ -798,7 +798,7 @@ btn25four.addEventListener('click', () => {
   } else if (player4[6][0] == 2) {
     btn25four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
   } else if (player4[6][0] >= 3) {
-    btn25four.style.backgroundColor = 'rgba(230, 28, 28, .8)';
+    btn25four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
     player4[6][1] = true;
   }
 
