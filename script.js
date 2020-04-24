@@ -84,6 +84,7 @@ const radio4players = document.querySelector('#select4players');
 const displayPlayer3 = document.querySelector('.player3');
 const displayPlayer4 = document.querySelector('.player4');
 
+
 // CHANGEING NUMBER OF PLAYERS 
 
 radio2players.addEventListener('click', () => {
@@ -101,718 +102,250 @@ radio4players.addEventListener('click', () => {
   displayPlayer4.style.display = 'flex';
 })
 
+// FUNCTION FOR COUNTING HOW MANY TIMES PLAYER SHOOT IN THE FIELD 
+// indexNumber is a number field in player[i] array (0 = 15 , 1 = 16...)
+
+function counting(player, button, indexNumber) {
+
+  player[indexNumber][0] += 1;
+
+  if (player[indexNumber][0] == 1) {
+    button.style.backgroundColor = 'rgba(43, 165, 43, .9)';
+  } else if (player[indexNumber][0] == 2) {
+    button.style.backgroundColor = 'rgba(255, 166, 0, .9)';
+  } else if (player[indexNumber][0] >= 3) {
+    button.style.backgroundColor = 'rgba(31, 31, 31, .6)';
+    player[indexNumber][1] = true;
+  }
+}
+
+// FUNCTION FOR ADDING POINTS TO PLAYER 
+// fnc is checking if other players have closed fields if yes then adding points 
+// indexNumber is a number field in player[i] array (0 = 15 , 1 = 16...)
+
+function addPoints(mainplayer, secplayer, trdplayer, fourplayer, indexNumber, pointsToAdd) {
+
+  if (mainplayer[indexNumber][0] > 3 && secplayer[indexNumber][1] == false) {
+    secplayer[7][0] += pointsToAdd;
+  }
+
+  if (mainplayer[indexNumber][0] > 3 && trdplayer[indexNumber][1] == false) {
+    trdplayer[7][0] += pointsToAdd;
+  }
+
+  if (mainplayer[indexNumber][0] > 3 && fourplayer[indexNumber][1] == false) {
+    fourplayer[7][0] += pointsToAdd;
+  }
+}
+
 // BUTTON 15 FOR 1 , 2 , 3 , 4 PLAYER
 
 btn15.addEventListener('click', () => {
-  player1[0][0] += 1;
 
-  if (player1[0][0] == 1) {
-    btn15.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player1[0][0] == 2) {
-    btn15.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player1[0][0] >= 3) {
-    btn15.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player1[0][1] = true;
-  }
+  counting(player1, btn15, 0);
 
-  if (player1[0][0] > 3 && player2[0][1] == false) {
-    player2[7][0] += 15;
-  }
-
-  if (player1[0][0] > 3 && player3[0][1] == false) {
-    player3[7][0] += 15;
-  }
-
-  if (player1[0][0] > 3 && player4[0][1] == false) {
-    player4[7][0] += 15;
-  }
+  addPoints(player1, player2, player3, player4, 0, 15);
 });
 
 btn15sec.addEventListener('click', () => {
-  player2[0][0] += 1;
 
-  if (player2[0][0] == 1) {
-    btn15sec.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player2[0][0] == 2) {
-    btn15sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player2[0][0] >= 3) {
-    btn15sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player2[0][1] = true;
-  }
+  counting(player2, btn15sec, 0);
 
-  if (player2[0][0] > 3 && player1[0][1] == false) {
-    player1[7][0] += 15;
-  }
-
-  if (player2[0][0] > 3 && player3[0][1] == false) {
-    player3[7][0] += 15;
-  }
-
-  if (player2[0][0] > 3 && player4[0][1] == false) {
-    player4[7][0] += 15;
-  }
+  addPoints(player2, player1, player3, player4, 0, 15);
 });
 
 btn15trd.addEventListener('click', () => {
-  player3[0][0] += 1;
 
-  if (player3[0][0] == 1) {
-    btn15trd.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player3[0][0] == 2) {
-    btn15trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player3[0][0] >= 3) {
-    btn15trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player3[0][1] = true;
-  }
+  counting(player3, btn15trd, 0);
 
-  if (player3[0][0] > 3 && player1[0][1] == false) {
-    player1[7][0] += 15;
-  }
-
-  if (player3[0][0] > 3 && player2[0][1] == false) {
-    player2[7][0] += 15;
-  }
-
-  if (player3[0][0] > 3 && player4[0][1] == false) {
-    player4[7][0] += 15;
-  }
+  addPoints(player3, player1, player2, player4, 0, 15);
 });
 
 btn15four.addEventListener('click', () => {
-  player4[0][0] += 1;
 
-  if (player4[0][0] == 1) {
-    btn15four.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player4[0][0] == 2) {
-    btn15four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player4[0][0] >= 3) {
-    btn15four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player4[0][1] = true;
-  }
+  counting(player4, btn15four, 0);
 
-  if (player4[0][0] > 3 && player1[0][1] == false) {
-    player1[7][0] += 15;
-  }
-
-  if (player4[0][0] > 3 && player2[0][1] == false) {
-    player2[7][0] += 15;
-  }
-
-  if (player4[0][0] > 3 && player3[0][1] == false) {
-    player3[7][0] += 15;
-  }
+  addPoints(player4, player1, player2, player3, 0, 15);
 });
 
 // BUTTON 16 FOR 1 , 2 , 3 , 4 PLAYER
 
 btn16.addEventListener('click', () => {
-  player1[1][0] += 1;
 
-  if (player1[1][0] == 1) {
-    btn16.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player1[1][0] == 2) {
-    btn16.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player1[1][0] >= 3) {
-    btn16.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player1[1][1] = true;
-  }
+  counting(player1, btn16, 1);
 
-  if (player1[1][0] > 3 && player2[1][1] == false) {
-    player2[7][0] += 16;
-  }
-
-  if (player1[1][0] > 3 && player3[1][1] == false) {
-    player3[7][0] += 16;
-  }
-
-  if (player1[1][0] > 3 && player4[1][1] == false) {
-    player4[7][0] += 16;
-  }
+  addPoints(player1, player2, player3, player4, 1, 16);
 });
 
 btn16sec.addEventListener('click', () => {
-  player2[1][0] += 1;
 
-  if (player2[1][0] == 1) {
-    btn16sec.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player2[1][0] == 2) {
-    btn16sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player2[1][0] >= 3) {
-    btn16sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player2[1][1] = true;
-  }
+  counting(player2, btn16sec, 1);
 
-  if (player2[1][0] > 3 && player1[1][1] == false) {
-    player1[7][0] += 16;
-  }
-
-  if (player2[1][0] > 3 && player3[1][1] == false) {
-    player3[7][0] += 16;
-  }
-
-  if (player2[1][0] > 3 && player4[1][1] == false) {
-    player4[7][0] += 16;
-  }
+  addPoints(player2, player1, player3, player4, 1, 16);
 });
 
 btn16trd.addEventListener('click', () => {
-  player3[1][0] += 1;
 
-  if (player3[1][0] == 1) {
-    btn16trd.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player3[1][0] == 2) {
-    btn16trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player3[1][0] >= 3) {
-    btn16trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player3[1][1] = true;
-  }
+  counting(player3, btn16trd, 1);
 
-  if (player3[1][0] > 3 && player1[1][1] == false) {
-    player1[7][0] += 16;
-  }
-
-  if (player3[1][0] > 3 && player2[1][1] == false) {
-    player2[7][0] += 16;
-  }
-
-  if (player3[1][0] > 3 && player4[1][1] == false) {
-    player4[7][0] += 16;
-  }
+  addPoints(player3, player1, player2, player4, 1, 16);
 });
 
 btn16four.addEventListener('click', () => {
-  player4[1][0] += 1;
 
-  if (player4[1][0] == 1) {
-    btn16four.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player4[1][0] == 2) {
-    btn16four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player4[1][0] >= 3) {
-    btn16four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player4[1][1] = true;
-  }
+  counting(player4, btn16four, 1);
 
-  if (player4[1][0] > 3 && player1[1][1] == false) {
-    player1[7][0] += 16;
-  }
-
-  if (player4[1][0] > 3 && player2[1][1] == false) {
-    player2[7][0] += 16;
-  }
-
-  if (player4[1][0] > 3 && player3[1][1] == false) {
-    player3[7][0] += 16;
-  }
+  addPoints(player4, player1, player2, player3, 1, 16);
 });
 
 // BUTTON 17 FOR 1 , 2 , 3 , 4 PLAYER
 
 btn17.addEventListener('click', () => {
-  player1[2][0] += 1;
 
-  if (player1[2][0] == 1) {
-    btn17.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player1[2][0] == 2) {
-    btn17.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player1[2][0] >= 3) {
-    btn17.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player1[2][1] = true;
-  }
+  counting(player1, btn17, 2);
 
-  if (player1[2][0] > 3 && player2[2][1] == false) {
-    player2[7][0] += 17;
-  }
-
-  if (player1[2][0] > 3 && player3[2][1] == false) {
-    player3[7][0] += 17;
-  }
-
-  if (player1[2][0] > 3 && player4[2][1] == false) {
-    player4[7][0] += 17;
-  }
+  addPoints(player1, player2, player3, player4, 2, 17);
 });
 
 btn17sec.addEventListener('click', () => {
-  player2[2][0] += 1;
 
-  if (player2[2][0] == 1) {
-    btn17sec.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player2[2][0] == 2) {
-    btn17sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player2[2][0] >= 3) {
-    btn17sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player2[2][1] = true;
-  }
+  counting(player2, btn17sec, 2);
 
-  if (player2[2][0] > 3 && player1[2][1] == false) {
-    player1[7][0] += 17;
-  }
-
-  if (player2[2][0] > 3 && player3[2][1] == false) {
-    player3[7][0] += 17;
-  }
-
-  if (player2[2][0] > 3 && player4[2][1] == false) {
-    player4[7][0] += 17;
-  }
+  addPoints(player2, player1, player3, player4, 2, 17);
 });
 
 btn17trd.addEventListener('click', () => {
-  player3[2][0] += 1;
 
-  if (player3[2][0] == 1) {
-    btn17trd.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player3[2][0] == 2) {
-    btn17trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player3[2][0] >= 3) {
-    btn17trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player3[2][1] = true;
-  }
+  counting(player3, btn17trd, 2);
 
-  if (player3[2][0] > 3 && player1[2][1] == false) {
-    player1[7][0] += 17;
-  }
-
-  if (player3[2][0] > 3 && player2[2][1] == false) {
-    player2[7][0] += 17;
-  }
-
-  if (player3[2][0] > 3 && player4[2][1] == false) {
-    player4[7][0] += 17;
-  }
+  addPoints(player3, player1, player2, player4, 2, 17);
 });
 
 btn17four.addEventListener('click', () => {
-  player4[2][0] += 1;
 
-  if (player4[2][0] == 1) {
-    btn17four.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player4[2][0] == 2) {
-    btn17four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player4[2][0] >= 3) {
-    btn17four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player4[2][1] = true;
-  }
+  counting(player4, btn17four, 2);
 
-  if (player4[2][0] > 3 && player1[2][1] == false) {
-    player1[7][0] += 17;
-  }
-
-  if (player4[2][0] > 3 && player2[2][1] == false) {
-    player2[7][0] += 17;
-  }
-
-  if (player4[2][0] > 3 && player3[2][1] == false) {
-    player3[7][0] += 17;
-  }
+  addPoints(player4, player1, player2, player3, 2, 17);
 });
 
 // BUTTON 18 FOR 1 , 2 , 3 , 4 PLAYER
 
 btn18.addEventListener('click', () => {
-  player1[3][0] += 1;
 
-  if (player1[3][0] == 1) {
-    btn18.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player1[3][0] == 2) {
-    btn18.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player1[3][0] >= 3) {
-    btn18.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player1[3][1] = true;
-  }
+  counting(player1, btn18, 3);
 
-  if (player1[3][0] > 3 && player2[3][1] == false) {
-    player2[7][0] += 18;
-  }
-
-  if (player1[3][0] > 3 && player3[3][1] == false) {
-    player3[7][0] += 18;
-  }
-
-  if (player1[3][0] > 3 && player4[3][1] == false) {
-    player4[7][0] += 18;
-  }
+  addPoints(player1, player2, player3, player4, 3, 18);
 });
 
 btn18sec.addEventListener('click', () => {
-  player2[3][0] += 1;
 
-  if (player2[3][0] == 1) {
-    btn18sec.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player2[3][0] == 2) {
-    btn18sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player2[3][0] >= 3) {
-    btn18sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player2[3][1] = true;
-  }
+  counting(player2, btn18sec, 3);
 
-  if (player2[3][0] > 3 && player1[3][1] == false) {
-    player1[7][0] += 18;
-  }
-
-  if (player2[3][0] > 3 && player3[3][1] == false) {
-    player3[7][0] += 18;
-  }
-
-  if (player2[3][0] > 3 && player4[3][1] == false) {
-    player4[7][0] += 18;
-  }
+  addPoints(player2, player1, player3, player4, 3, 18);
 });
 
 btn18trd.addEventListener('click', () => {
-  player3[3][0] += 1;
 
-  if (player3[3][0] == 1) {
-    btn18trd.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player3[3][0] == 2) {
-    btn18trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player3[3][0] >= 3) {
-    btn18trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player3[3][1] = true;
-  }
+  counting(player3, btn18trd, 3);
 
-  if (player3[3][0] > 3 && player1[3][1] == false) {
-    player1[7][0] += 18;
-  }
-
-  if (player3[3][0] > 3 && player2[3][1] == false) {
-    player2[7][0] += 18;
-  }
-
-  if (player3[3][0] > 3 && player4[3][1] == false) {
-    player4[7][0] += 18;
-  }
+  addPoints(player3, player1, player2, player4, 3, 18);
 });
 
 btn18four.addEventListener('click', () => {
-  player4[3][0] += 1;
 
-  if (player4[3][0] == 1) {
-    btn18four.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player4[3][0] == 2) {
-    btn18four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player4[3][0] >= 3) {
-    btn18four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player4[3][1] = true;
-  }
+  counting(player4, btn18four, 3);
 
-  if (player4[3][0] > 3 && player1[3][1] == false) {
-    player1[7][0] += 18;
-  }
-
-  if (player4[3][0] > 3 && player2[3][1] == false) {
-    player2[7][0] += 18;
-  }
-
-  if (player4[3][0] > 3 && player3[3][1] == false) {
-    player3[7][0] += 18;
-  }
+  addPoints(player4, player1, player2, player3, 3, 18);
 });
 
 // BUTTON 19 FOR 1 , 2 , 3 , 4 PLAYER
 
 btn19.addEventListener('click', () => {
-  player1[4][0] += 1;
 
-  if (player1[4][0] == 1) {
-    btn19.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player1[4][0] == 2) {
-    btn19.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player1[4][0] >= 3) {
-    btn19.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player1[4][1] = true;
-  }
+  counting(player1, btn19, 4);
 
-  if (player1[4][0] > 3 && player2[4][1] == false) {
-    player2[7][0] += 19;
-  }
-
-  if (player1[4][0] > 3 && player3[4][1] == false) {
-    player3[7][0] += 19;
-  }
-
-  if (player1[4][0] > 3 && player4[4][1] == false) {
-    player4[7][0] += 19;
-  }
+  addPoints(player1, player2, player3, player4, 4, 19);
 });
 
 btn19sec.addEventListener('click', () => {
-  player2[4][0] += 1;
 
-  if (player2[4][0] == 1) {
-    btn19sec.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player2[4][0] == 2) {
-    btn19sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player2[4][0] >= 3) {
-    btn19sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player2[4][1] = true;
-  }
+  counting(player2, btn19sec, 4);
 
-  if (player2[4][0] > 3 && player1[4][1] == false) {
-    player1[7][0] += 19;
-  }
-
-  if (player2[4][0] > 3 && player3[4][1] == false) {
-    player3[7][0] += 19;
-  }
-
-  if (player2[4][0] > 3 && player4[4][1] == false) {
-    player4[7][0] += 19;
-  }
+  addPoints(player2, player1, player3, player4, 4, 19);
 });
 
 btn19trd.addEventListener('click', () => {
-  player3[4][0] += 1;
 
-  if (player3[4][0] == 1) {
-    btn19trd.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player3[4][0] == 2) {
-    btn19trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player3[4][0] >= 3) {
-    btn19trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player3[4][1] = true;
-  }
+  counting(player3, btn19trd, 4);
 
-  if (player3[4][0] > 3 && player1[4][1] == false) {
-    player1[7][0] += 19;
-  }
-
-  if (player3[4][0] > 3 && player2[4][1] == false) {
-    player2[7][0] += 19;
-  }
-
-  if (player3[4][0] > 3 && player4[4][1] == false) {
-    player4[7][0] += 19;
-  }
+  addPoints(player3, player1, player2, player4, 4, 19);
 });
 
 btn19four.addEventListener('click', () => {
-  player4[4][0] += 1;
 
-  if (player4[4][0] == 1) {
-    btn19four.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player4[4][0] == 2) {
-    btn19four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player4[4][0] >= 3) {
-    btn19four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player4[4][1] = true;
-  }
+  counting(player4, btn19four, 4);
 
-  if (player4[4][0] > 3 && player1[4][1] == false) {
-    player1[7][0] += 19;
-  }
-
-  if (player4[4][0] > 3 && player2[4][1] == false) {
-    player2[7][0] += 19;
-  }
-
-  if (player4[4][0] > 3 && player3[4][1] == false) {
-    player3[7][0] += 19;
-  }
+  addPoints(player4, player1, player2, player3, 4, 19);
 });
 
 // BUTTON 20 FOR 1 , 2 , 3 , 4 PLAYER
 
 btn20.addEventListener('click', () => {
-  player1[5][0] += 1;
 
-  if (player1[5][0] == 1) {
-    btn20.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player1[5][0] == 2) {
-    btn20.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player1[5][0] >= 3) {
-    btn20.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player1[5][1] = true;
-  }
+  counting(player1, btn20, 5);
 
-  if (player1[5][0] > 3 && player2[5][1] == false) {
-    player2[7][0] += 20;
-  }
-
-  if (player1[5][0] > 3 && player3[5][1] == false) {
-    player3[7][0] += 20;
-  }
-
-  if (player1[5][0] > 3 && player4[5][1] == false) {
-    player4[7][0] += 20;
-  }
+  addPoints(player1, player2, player3, player4, 5, 20);
 });
 
 btn20sec.addEventListener('click', () => {
-  player2[5][0] += 1;
 
-  if (player2[5][0] == 1) {
-    btn20sec.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player2[5][0] == 2) {
-    btn20sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player2[5][0] >= 3) {
-    btn20sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player2[5][1] = true;
-  }
+  counting(player2, btn20sec, 5);
 
-  if (player2[5][0] > 3 && player1[5][1] == false) {
-    player1[7][0] += 20;
-  }
-
-  if (player2[5][0] > 3 && player3[5][1] == false) {
-    player3[7][0] += 20;
-  }
-
-  if (player2[5][0] > 3 && player4[5][1] == false) {
-    player4[7][0] += 20;
-  }
+  addPoints(player2, player1, player3, player4, 5, 20);
 });
 
 btn20trd.addEventListener('click', () => {
-  player3[5][0] += 1;
 
-  if (player3[5][0] == 1) {
-    btn20trd.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player3[5][0] == 2) {
-    btn20trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player3[5][0] >= 3) {
-    btn20trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player3[5][1] = true;
-  }
+  counting(player3, btn20trd, 5);
 
-  if (player3[5][0] > 3 && player1[5][1] == false) {
-    player1[7][0] += 20;
-  }
-
-  if (player3[5][0] > 3 && player2[5][1] == false) {
-    player2[7][0] += 20;
-  }
-
-  if (player3[5][0] > 3 && player4[5][1] == false) {
-    player4[7][0] += 20;
-  }
+  addPoints(player3, player1, player2, player4, 5, 20);
 });
 
 btn20four.addEventListener('click', () => {
-  player4[5][0] += 1;
 
-  if (player4[5][0] == 1) {
-    btn20four.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player4[5][0] == 2) {
-    btn20four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player4[5][0] >= 3) {
-    btn20four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player4[5][1] = true;
-  }
+  counting(player4, btn20four, 5);
 
-  if (player4[5][0] > 3 && player1[5][1] == false) {
-    player1[7][0] += 20;
-  }
-
-  if (player4[5][0] > 3 && player2[5][1] == false) {
-    player2[7][0] += 20;
-  }
-
-  if (player4[5][0] > 3 && player3[5][1] == false) {
-    player3[7][0] += 20;
-  }
+  addPoints(player4, player1, player2, player3, 5, 20);
 });
 
 // BUTTON 25 FOR 1 , 2 , 3 , 4 PLAYER
 
 btn25.addEventListener('click', () => {
-  player1[6][0] += 1;
 
-  if (player1[6][0] == 1) {
-    btn25.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player1[6][0] == 2) {
-    btn25.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player1[6][0] >= 3) {
-    btn25.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player1[6][1] = true;
-  }
+  counting(player1, btn25, 6);
 
-  if (player1[6][0] > 3 && player2[6][1] == false) {
-    player2[7][0] += 25;
-  }
-
-  if (player1[6][0] > 3 && player3[6][1] == false) {
-    player3[7][0] += 25;
-  }
-
-  if (player1[6][0] > 3 && player4[6][1] == false) {
-    player4[7][0] += 25;
-  }
+  addPoints(player1, player2, player3, player4, 6, 25);
 });
 
 btn25sec.addEventListener('click', () => {
-  player2[6][0] += 1;
 
-  if (player2[6][0] == 1) {
-    btn25sec.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player2[6][0] == 2) {
-    btn25sec.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player2[6][0] >= 3) {
-    btn25sec.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player2[6][1] = true;
-  }
+  counting(player2, btn25sec, 6);
 
-  if (player2[6][0] > 3 && player1[6][1] == false) {
-    player1[7][0] += 25;
-  }
-
-  if (player2[6][0] > 3 && player3[6][1] == false) {
-    player3[7][0] += 25;
-  }
-
-  if (player2[6][0] > 3 && player4[6][1] == false) {
-    player4[7][0] += 25;
-  }
+  addPoints(player2, player1, player3, player4, 6, 25);
 });
 
 btn25trd.addEventListener('click', () => {
-  player3[6][0] += 1;
 
-  if (player3[6][0] == 1) {
-    btn25trd.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player3[6][0] == 2) {
-    btn25trd.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player3[6][0] >= 3) {
-    btn25trd.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player3[6][1] = true;
-  }
+  counting(player3, btn25trd, 6);
 
-  if (player3[6][0] > 3 && player1[6][1] == false) {
-    player1[7][0] += 25;
-  }
-
-  if (player3[6][0] > 3 && player2[6][1] == false) {
-    player2[7][0] += 25;
-  }
-
-  if (player3[6][0] > 3 && player4[6][1] == false) {
-    player4[7][0] += 25;
-  }
+  addPoints(player3, player1, player2, player4, 6, 25);
 });
 
 btn25four.addEventListener('click', () => {
-  player4[6][0] += 1;
 
-  if (player4[6][0] == 1) {
-    btn25four.style.backgroundColor = 'rgba(43, 165, 43, .9)';
-  } else if (player4[6][0] == 2) {
-    btn25four.style.backgroundColor = 'rgba(255, 166, 0, .9)';
-  } else if (player4[6][0] >= 3) {
-    btn25four.style.backgroundColor = 'rgba(31, 31, 31, .6)';
-    player4[6][1] = true;
-  }
+  counting(player4, btn25four, 6);
 
-  if (player4[6][0] > 3 && player1[6][1] == false) {
-    player1[7][0] += 25;
-  }
-
-  if (player4[6][0] > 3 && player2[6][1] == false) {
-    player2[7][0] += 25;
-  }
-
-  if (player4[6][0] > 3 && player3[6][1] == false) {
-    player3[7][0] += 25;
-  }
+  addPoints(player4, player1, player2, player3, 6, 25);
 });
 
 
