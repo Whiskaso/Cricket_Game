@@ -351,7 +351,6 @@ btn25four.addEventListener('click', () => {
 
 // ACTUALIZATION SCORE POINTS AND CHECKING IF SOMEONE WIN
 
-
 function actualization() {
   setTimeout(() => {
     points1.textContent = player1[7][0];
