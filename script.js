@@ -168,11 +168,11 @@ function actualization() {
     }
 
     if (player3[0][1] == true && player3[1][1] == true && player3[2][1] == true && player3[3][1] == true && player3[4][1] == true && player3[5][1] == true && player3[6][1] == true && player3[7][0] < player1[7][0] && player3[7][0] < player2[7][0] && player3[7][0] < player4[7][0]) {
-      alert('Player 2 win !');
+      alert('Player 3 win !');
     }
 
     if (player4[0][1] == true && player4[1][1] == true && player4[2][1] == true && player4[3][1] == true && player4[4][1] == true && player4[5][1] == true && player4[6][1] == true && player4[7][0] < player1[7][0] && player4[7][0] < player3[7][0] && player4[7][0] < player2[7][0]) {
-      alert('Player 2 win !');
+      alert('Player 4 win !');
     }
 
   }, 300);
