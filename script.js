@@ -42,46 +42,18 @@ let player4 = [
   [0]
 ];
 
-const points1 = document.querySelector('.points1');
+const points1 = document.querySelector('.points1'); // PLACES WHEN PLAYER POINTS ARE DISPLAYED
 const points2 = document.querySelector('.points2');
 const points3 = document.querySelector('.points3');
 const points4 = document.querySelector('.points4');
 
-const buttons = document.querySelectorAll('button');
-const btn15 = document.querySelector('.btn15');
-const btn15sec = document.querySelector('.btn15sec');
-const btn15trd = document.querySelector('.btn15trd');
-const btn15four = document.querySelector('.btn15four');
-const btn16 = document.querySelector('.btn16');
-const btn16sec = document.querySelector('.btn16sec');
-const btn16trd = document.querySelector('.btn16trd');
-const btn16four = document.querySelector('.btn16four');
-const btn17 = document.querySelector('.btn17');
-const btn17sec = document.querySelector('.btn17sec');
-const btn17trd = document.querySelector('.btn17trd');
-const btn17four = document.querySelector('.btn17four');
-const btn18 = document.querySelector('.btn18');
-const btn18sec = document.querySelector('.btn18sec');
-const btn18trd = document.querySelector('.btn18trd');
-const btn18four = document.querySelector('.btn18four');
-const btn19 = document.querySelector('.btn19');
-const btn19sec = document.querySelector('.btn19sec');
-const btn19trd = document.querySelector('.btn19trd');
-const btn19four = document.querySelector('.btn19four');
-const btn20 = document.querySelector('.btn20');
-const btn20sec = document.querySelector('.btn20sec');
-const btn20trd = document.querySelector('.btn20trd');
-const btn20four = document.querySelector('.btn20four');
-const btn25 = document.querySelector('.btn25');
-const btn25sec = document.querySelector('.btn25sec');
-const btn25trd = document.querySelector('.btn25trd');
-const btn25four = document.querySelector('.btn25four');
+const buttons = [...document.querySelectorAll('button')]; // ALL BUTTONS AND TRANSFORMING TO ARRAY 
 
-const radio2players = document.querySelector('#select2players');
+const radio2players = document.querySelector('#select2players'); // RADIO BUTTONS FOR CHANGING NUMBER OF PLAYERS
 const radio3players = document.querySelector('#select3players');
 const radio4players = document.querySelector('#select4players');
 
-const displayPlayer3 = document.querySelector('.player3');
+const displayPlayer3 = document.querySelector('.player3'); // FOR HIDING AND SHOWING PLAYER 3 AND 4  
 const displayPlayer4 = document.querySelector('.player4');
 
 
@@ -138,214 +110,43 @@ function addPoints(mainplayer, secplayer, trdplayer, fourplayer, indexNumber, po
   }
 }
 
-// BUTTON 15 FOR 1 , 2 , 3 , 4 PLAYER
+// EVENT LISTENER FOR EACH BUTTON 
 
-btn15.addEventListener('click', () => {
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    buttonField = button.dataset.field;
+    player = button.dataset.player;
+    index = buttonField - 15;
+    if (buttonField == 25) {
+      index = 6;
+    }
 
-  counting(player1, btn15, 0);
+    if (player == "p1") {
 
-  addPoints(player1, player2, player3, player4, 0, 15);
-});
+      counting(player1, button, index);
 
-btn15sec.addEventListener('click', () => {
+      addPoints(player1, player2, player3, player4, index, +buttonField);
 
-  counting(player2, btn15sec, 0);
+    } else if (player == "p2") {
 
-  addPoints(player2, player1, player3, player4, 0, 15);
-});
+      counting(player2, button, index);
 
-btn15trd.addEventListener('click', () => {
+      addPoints(player2, player1, player3, player4, index, +buttonField);
 
-  counting(player3, btn15trd, 0);
+    } else if (player == "p3") {
 
-  addPoints(player3, player1, player2, player4, 0, 15);
-});
+      counting(player3, button, index);
 
-btn15four.addEventListener('click', () => {
+      addPoints(player3, player1, player2, player4, index, +buttonField);
 
-  counting(player4, btn15four, 0);
+    } else if (player == "p4") {
 
-  addPoints(player4, player1, player2, player3, 0, 15);
-});
+      counting(player3, button, index);
 
-// BUTTON 16 FOR 1 , 2 , 3 , 4 PLAYER
+      addPoints(player3, player1, player2, player4, index, +buttonField);
 
-btn16.addEventListener('click', () => {
-
-  counting(player1, btn16, 1);
-
-  addPoints(player1, player2, player3, player4, 1, 16);
-});
-
-btn16sec.addEventListener('click', () => {
-
-  counting(player2, btn16sec, 1);
-
-  addPoints(player2, player1, player3, player4, 1, 16);
-});
-
-btn16trd.addEventListener('click', () => {
-
-  counting(player3, btn16trd, 1);
-
-  addPoints(player3, player1, player2, player4, 1, 16);
-});
-
-btn16four.addEventListener('click', () => {
-
-  counting(player4, btn16four, 1);
-
-  addPoints(player4, player1, player2, player3, 1, 16);
-});
-
-// BUTTON 17 FOR 1 , 2 , 3 , 4 PLAYER
-
-btn17.addEventListener('click', () => {
-
-  counting(player1, btn17, 2);
-
-  addPoints(player1, player2, player3, player4, 2, 17);
-});
-
-btn17sec.addEventListener('click', () => {
-
-  counting(player2, btn17sec, 2);
-
-  addPoints(player2, player1, player3, player4, 2, 17);
-});
-
-btn17trd.addEventListener('click', () => {
-
-  counting(player3, btn17trd, 2);
-
-  addPoints(player3, player1, player2, player4, 2, 17);
-});
-
-btn17four.addEventListener('click', () => {
-
-  counting(player4, btn17four, 2);
-
-  addPoints(player4, player1, player2, player3, 2, 17);
-});
-
-// BUTTON 18 FOR 1 , 2 , 3 , 4 PLAYER
-
-btn18.addEventListener('click', () => {
-
-  counting(player1, btn18, 3);
-
-  addPoints(player1, player2, player3, player4, 3, 18);
-});
-
-btn18sec.addEventListener('click', () => {
-
-  counting(player2, btn18sec, 3);
-
-  addPoints(player2, player1, player3, player4, 3, 18);
-});
-
-btn18trd.addEventListener('click', () => {
-
-  counting(player3, btn18trd, 3);
-
-  addPoints(player3, player1, player2, player4, 3, 18);
-});
-
-btn18four.addEventListener('click', () => {
-
-  counting(player4, btn18four, 3);
-
-  addPoints(player4, player1, player2, player3, 3, 18);
-});
-
-// BUTTON 19 FOR 1 , 2 , 3 , 4 PLAYER
-
-btn19.addEventListener('click', () => {
-
-  counting(player1, btn19, 4);
-
-  addPoints(player1, player2, player3, player4, 4, 19);
-});
-
-btn19sec.addEventListener('click', () => {
-
-  counting(player2, btn19sec, 4);
-
-  addPoints(player2, player1, player3, player4, 4, 19);
-});
-
-btn19trd.addEventListener('click', () => {
-
-  counting(player3, btn19trd, 4);
-
-  addPoints(player3, player1, player2, player4, 4, 19);
-});
-
-btn19four.addEventListener('click', () => {
-
-  counting(player4, btn19four, 4);
-
-  addPoints(player4, player1, player2, player3, 4, 19);
-});
-
-// BUTTON 20 FOR 1 , 2 , 3 , 4 PLAYER
-
-btn20.addEventListener('click', () => {
-
-  counting(player1, btn20, 5);
-
-  addPoints(player1, player2, player3, player4, 5, 20);
-});
-
-btn20sec.addEventListener('click', () => {
-
-  counting(player2, btn20sec, 5);
-
-  addPoints(player2, player1, player3, player4, 5, 20);
-});
-
-btn20trd.addEventListener('click', () => {
-
-  counting(player3, btn20trd, 5);
-
-  addPoints(player3, player1, player2, player4, 5, 20);
-});
-
-btn20four.addEventListener('click', () => {
-
-  counting(player4, btn20four, 5);
-
-  addPoints(player4, player1, player2, player3, 5, 20);
-});
-
-// BUTTON 25 FOR 1 , 2 , 3 , 4 PLAYER
-
-btn25.addEventListener('click', () => {
-
-  counting(player1, btn25, 6);
-
-  addPoints(player1, player2, player3, player4, 6, 25);
-});
-
-btn25sec.addEventListener('click', () => {
-
-  counting(player2, btn25sec, 6);
-
-  addPoints(player2, player1, player3, player4, 6, 25);
-});
-
-btn25trd.addEventListener('click', () => {
-
-  counting(player3, btn25trd, 6);
-
-  addPoints(player3, player1, player2, player4, 6, 25);
-});
-
-btn25four.addEventListener('click', () => {
-
-  counting(player4, btn25four, 6);
-
-  addPoints(player4, player1, player2, player3, 6, 25);
+    }
+  })
 });
 
 
@@ -375,22 +176,4 @@ function actualization() {
     }
 
   }, 300);
-}
-
-
-// print troll to undo button
-function printImage(source) {
-  var Pagelink = "about:blank";
-  var pwa = window.open(Pagelink, "_new");
-  pwa.document.open();
-  pwa.document.write(ImagetoPrint(source));
-  pwa.document.close();
-}
-
-function ImagetoPrint(source) {
-  return "<html><head><scri" + "pt>function step1(){\n" +
-    "setTimeout('step2()', 10);}\n" +
-    "function step2(){window.print();window.close()}\n" +
-    "</scri" + "pt></head><body onload='step1()'>\n" +
-    "<img src='" + source + "' /></body></html>";
 }
